@@ -95,7 +95,7 @@ export default function Index() {
 
   const getArticles = async () => {
     try {
-      const response = await fetch("https://api-berita-indonesia.vercel.app/cnn/hiburan");
+      const response = await fetch("https://api-berita-indonesia.vercel.app/merdeka/dunia");
       const articlesData: ArticlesResponse = await response.json();
       setArticles(articlesData.data.posts);
     } catch (error) {
@@ -120,13 +120,13 @@ export default function Index() {
         <Image style={styles.goBack} source={require('../assets/images/back.png')} />
        </TouchableOpacity>
        <ImageBackground
-        source={require('../assets/images/tenology-banner.jpg')}
+        source={require('../assets/images/world-banner.jpg')}
         style={styles.headContainer}>
             <View style={styles.headTextContent}> 
-                <Text style={styles.sectionText}>TECHOLOGY SECTION</Text>
+                <Text style={styles.sectionText}>WORLD</Text>
                 <View style={styles.publisherHead}>
-                    <Image style={styles.publisherImageHead} source={require('../assets/images/cnn.png')}></Image>
-                    <Text style={styles.publisherTextHead} >By : CNN Indonesia</Text>
+                    <Image style={styles.publisherImageHead} source={require('../assets/images/merdeka.jpeg')}></Image>
+                    <Text style={styles.publisherTextHead} >Merdeka.com</Text>
                 </View>
             </View>
         </ImageBackground>
@@ -141,12 +141,12 @@ export default function Index() {
               <View style={styles.newsTextContainer}>
                 <View>
                   <Text style={styles.newsTitle}>{article.title}</Text>
-                  <Text style={styles.newsCategory}>Technology</Text>
+                  <Text style={styles.newsCategory}>World</Text>
                 </View>
                 <View style={styles.publisherDate}>
                   <View style={styles.publisher}>
-                    <Image style={styles.publisherImage} source={require('../assets/images/cnn.png')}></Image>
-                    <Text style={styles.publisherText} >CNN Indonesia</Text>
+                    <Image style={styles.publisherImage} source={require('../assets/images/merdeka.jpeg')}></Image>
+                    <Text style={styles.publisherText} >merdeka.com</Text>
                   </View>
                   <Text style={styles.publisherText} >{ formatDate(article.pubDate)}</Text>
                 </View>
